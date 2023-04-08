@@ -35,6 +35,7 @@ contract MyToken {
     // burn function
 
       function burn(address add,uint val) public{
+       require(balances[add]>=val,"val cannot be greater than balances");
         balances[add]-=val;
         TotalSupply-=val;
 
